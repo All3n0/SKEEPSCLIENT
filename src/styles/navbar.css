@@ -1,0 +1,96 @@
+/* General Navbar Styles */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: #070606 solid 2px;
+    background-color: #ffffff; /* Light gray background */
+    box-shadow: 0 2px 5px rgba(0, 0#ce1515, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Dropdown Menu Styles */
+.navbar .dropdown-menu {
+    left: 0;
+    top: 100%;
+    background-color: #faf6f6;
+    border: 1px solid #070606;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(187, 33, 33, 0.1);
+}
+
+/* Dropdown Menu Item Hover */
+.navbar .dropdown-menu .dropdown-item {
+    padding: 10px 20px;
+    color: #0e0c0c;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .dropdown-menu .dropdown-item:hover {
+    background-color: #f0f0f0;
+    color: #ca2e13; /* Bootstrap primary blue */
+}
+
+/* Search Bar Styles */
+.search-bar .form-control {
+    border-radius: 0;
+    border: 1px solid #ddd;
+}
+
+.search-bar .btn-primary {
+    background-color: #ce1515; /* Bootstrap primary blue */
+    border: none;
+    border-radius: 0;
+    transition: background-color 0.3s ease;
+    
+}
+
+.search-bar .btn-primary:hover {
+    background-color: #0e0f0f; /* Darker blue */
+}
+
+/* Navbar Toggler (Hamburger Icon) */
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23333' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Right Section (About and Cart) */
+.navbar .d-flex .me-3 {
+    margin-right: 1rem;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar .d-flex .me-3:hover {
+    color: #ce1515;
+}
+
+.navbar .d-flex .cart-icon {
+    font-size: 1.5rem;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.navbar .d-flex .cart-icon:hover {
+    color: #ff4800;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar .search-bar {
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .navbar .d-flex {
+        margin-top: 1rem;
+        justify-content: center;
+    }
+}
