@@ -33,6 +33,10 @@ function Navbar() {
                         </li>
                     </ul>
                 )}
+                {/* Skeeps Link */}
+                <Link to="/home" className="ms-2 text-decoration-none skeeps-link">
+                    SKEEPS
+                </Link>
             </div>
 
             {/* Center Section: Search Bar */}

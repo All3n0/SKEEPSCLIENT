@@ -38,6 +38,7 @@
 }
 
 .search-bar .btn-primary {
+     /* Bootstrap's primary color */
     background-color: #ce1515; /* Bootstrap primary blue */
     border: none;
     border-radius: 0;
@@ -74,7 +75,7 @@
 
 .navbar .d-flex .cart-icon {
     font-size: 1.5rem;
-    color: #333;
+    color: #b3261a; /* Bootstrap's primary color */
     transition: color 0.3s ease;
 }
 
@@ -93,4 +94,15 @@
         margin-top: 1rem;
         justify-content: center;
     }
+}
+.skeeps-link {
+    font-weight: bold;
+    color: #b3261a; /* Bootstrap's primary color */
+    transition: color 0.3s;
+    font-family:'Rubik Glitch', cursive;
+    font-size: xx-large;
+}
+
+.skeeps-link:hover {
+    color: #ca2e13; /* Darker shade of blue */
 }
