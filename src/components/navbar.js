@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/navbar.css'; // Ensure correct path
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaShoppingCart } from 'react-icons/fa';
+import Footer from './Footer';
 
 function Navbar() {
     const [showDropdown, setShowDropdown] = useState(false);
@@ -63,6 +64,7 @@ function Navbar() {
                     <FaShoppingCart size={24} />
                 </Link>
             </div>
+            
         </nav>
     );
 }

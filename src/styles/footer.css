@@ -1,0 +1,99 @@
+.footer {
+    background: #b3261a;
+    position: relative;
+    color: #1d1b1b;
+    padding: 40px 20px;
+    border-top: 1px solid #dee2e6;
+    overflow: hidden; /* To hide the SVG beyond its intended area */
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: #b3261a;
+    clip-path: path("M0,50 Q100,100 200,50 T400,50 T600,50 T800,50 T1000,50 T1200,50 T1400,50 V150 H0 Z");
+    z-index: 1;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative; /* Ensure content is above the hilly effect */
+    z-index: 2;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.footer-logo {
+    text-align: left;
+}
+
+.company-logo {
+    width: 150px;
+    height: auto;
+}
+
+.footer-links nav,
+.footer-content nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ffcccb;
+}
+
+.footer-content p {
+    margin: 0 0 10px;
+    font-size: 14px;
+}
+
+.footer-content nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.footer-content nav a:hover {
+    color: #ffcccb;
+}
+
+@media (max-width: 768px) {
+    .footer-columns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        margin-bottom: 20px;
+    }
+
+    .footer-logo {
+        text-align: center;
+    }
+}
