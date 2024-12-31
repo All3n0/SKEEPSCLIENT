@@ -1,0 +1,87 @@
+/* Home Page Container */
+.home-container {
+    padding: 40px 20px;
+    text-align: center;
+    background: #ffffff; /* Plain white background */
+    min-height: calc(100vh - 120px); /* Adjust for navbar and footer height */
+}
+
+/* Home Page Title */
+.home-title {
+    margin-bottom: 40px;
+    font-size: 3rem;
+    color: #b3261a;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Cards Container */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Individual Card */
+.card {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 280px;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 216, 205, 0.15);
+}
+
+/* Card Image */
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Card Title */
+.card-title {
+    font-size: 1.5rem;
+    color: #b3261a;
+    font-family: 'Poppins', sans-serif;
+    margin: 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Button Styling */
+.btn {
+    color: #fff;
+    background: #e92716;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #000000;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .home-title {
+        font-size: 2rem;
+    }
+
+    .card {
+        width: 100%;
+    }
+}

@@ -1,9 +1,9 @@
 .footer {
-    background: #b3261a;
+    background: #000000;
     position: relative;
-    color: #1d1b1b;
+    color: hsl(0, 0%, 100%);
     padding: 40px 20px;
-    border-top: 1px solid #dee2e6;
+    border-top: 1px solid #e92716;
     overflow: hidden; /* To hide the SVG beyond its intended area */
 }
 
@@ -14,7 +14,7 @@
     left: 0;
     width: 100%;
     height: 150px;
-    background: #b3261a;
+    background: #000000;
     clip-path: path("M0,50 Q100,100 200,50 T400,50 T600,50 T800,50 T1000,50 T1200,50 T1400,50 V150 H0 Z");
     z-index: 1;
 }
@@ -64,7 +64,7 @@
 }
 
 .footer-links a:hover {
-    color: #ffcccb;
+    color: #e92716;
 }
 
 .footer-content p {
@@ -80,10 +80,10 @@
 }
 
 .footer-content nav a:hover {
-    color: #ffcccb;
+    color: #e92716;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
     .footer-columns {
         flex-direction: column;
         align-items: center;
