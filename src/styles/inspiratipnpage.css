@@ -1,0 +1,17 @@
+.inspiration-page {
+    text-align: center;
+    padding: 20px;
+}
+
+.bags-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.bag-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}

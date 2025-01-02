@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import '../styles/navbar.css'; // Ensure correct path
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaShoppingCart } from 'react-icons/fa';
-import Footer from './Footer';
 
 function Navbar() {
     const [showDropdown, setShowDropdown] = useState(false);
@@ -19,7 +18,9 @@ function Navbar() {
                     type="button"
                     onClick={toggleDropdown}
                 >
-                    <span className="navbar-toggler-icon"></span>
+                    <div className="toggler-line"></div>
+                    <div className="toggler-line"></div>
+                    <div className="toggler-line"></div>
                 </button>
                 {showDropdown && (
                     <ul className="dropdown-menu show position-absolute mt-2">
@@ -34,12 +35,12 @@ function Navbar() {
                         </li>
                     </ul>
                 )}
-                {/* Skeeps Link */}
                 <Link to="/home" className="ms-2 text-decoration-none skeeps-link">
                     SKEEPS
                 </Link>
             </div>
 
+            {/* Center Section: Search Bar */}
             {/* Center Section: Search Bar */}
             <div className="mx-auto search-bar">
                 <div className="input-group">
@@ -64,7 +65,6 @@ function Navbar() {
                     <FaShoppingCart size={24} />
                 </Link>
             </div>
-            
         </nav>
     );
 }

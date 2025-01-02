@@ -1,69 +1,99 @@
-/* General Navbar Styles */
+/* Navbar Styles */
 .navbar {
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: #070606 solid 2px;
-    background-color: #ffffff; /* Light gray background */
-    box-shadow: 0 2px 5px rgba(0, 0#ce1515, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #000000; /* Black background */
+    border-bottom: 2px solid #b3261a;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Dropdown Menu Styles */
 .navbar .dropdown-menu {
     left: 0;
     top: 100%;
-    background-color: #faf6f6;
-    border: 1px solid #070606;
+    background-color: #ffffff;
+    border: 1px solid #b3261a;
     border-radius: 4px;
-    box-shadow: 0 4px 6px rgba(187, 33, 33, 0.1);
+    box-shadow: 0 4px 6px white;
 }
 
-/* Dropdown Menu Item Hover */
 .navbar .dropdown-menu .dropdown-item {
     padding: 10px 20px;
     color: #0e0c0c;
-    text-decoration: none;
     transition: background-color 0.3s ease;
 }
 
 .navbar .dropdown-menu .dropdown-item:hover {
     background-color: #f0f0f0;
-    color: #ca2e13; /* Bootstrap primary blue */
+    color: #ca2e13;
 }
 
-/* Search Bar Styles */
+/* Search Bar */
 .search-bar .form-control {
-    border-radius: 0;
+    border-radius: 25px; /* Rounded corners */
     border: 1px solid #ddd;
 }
 
 .search-bar .btn-primary {
-     /* Bootstrap's primary color */
-    background-color: #ce1515; /* Bootstrap primary blue */
+    border-radius: 25px; /* Rounded corners */
+    background-color: #ce1515;
     border: none;
-    border-radius: 0;
     transition: background-color 0.3s ease;
-    
 }
 
 .search-bar .btn-primary:hover {
-    background-color: #0e0f0f; /* Darker blue */
+    background-color: #0e0f0f;
 }
 
-/* Navbar Toggler (Hamburger Icon) */
+/* Navbar Toggler */
 .navbar-toggler {
     border: none;
     background-color: transparent;
+    padding: 0;
 }
 
-.navbar-toggler .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23333' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+.navbar-toggler .toggler-line {
+    width: 25px;
+    height: 3px;
+    background-color: #b3261a; /* Line color matches background */
+    margin: 3px 0;
+    transition: background-color 0.3s ease;
 }
 
+.navbar-toggler:hover .toggler-line {
+    background-color: #ff4800; /* Highlight on hover */
+}
+
+/* SKEEPS Link */
+.skeeps-link {
+    font-weight: bold;
+    color: #b3261a;
+    font-family: 'Rubik Glitch', cursive;
+    font-size: xx-large;
+    transition: color 0.3s;
+}
+
+.skeeps-link:hover {
+    color: #ca2e13;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar .search-bar {
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .navbar .d-flex {
+        margin-top: 1rem;
+        justify-content: center;
+    }
+}
 /* Right Section (About and Cart) */
 .navbar .d-flex .me-3 {
     margin-right: 1rem;
-    color: #333;
+    color: #b3261a;
     font-weight: bold;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -81,28 +111,4 @@
 
 .navbar .d-flex .cart-icon:hover {
     color: #ff4800;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar .search-bar {
-        margin-top: 1rem;
-        width: 100%;
-    }
-
-    .navbar .d-flex {
-        margin-top: 1rem;
-        justify-content: center;
-    }
-}
-.skeeps-link {
-    font-weight: bold;
-    color: #b3261a; /* Bootstrap's primary color */
-    transition: color 0.3s;
-    font-family:'Rubik Glitch', cursive;
-    font-size: xx-large;
-}
-
-.skeeps-link:hover {
-    color: #ca2e13; /* Darker shade of blue */
 }

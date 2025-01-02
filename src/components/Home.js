@@ -17,7 +17,7 @@ const Home = () => {
                     {/* Bags Card */}
                     <div className="card">
                         <img
-                            src="https://example.com/bags.jpg"
+                            src="https://i.pinimg.com/236x/7c/ce/9c/7cce9c6c42e19b455860ec240676511d.jpg"
                             alt="Bags"
                             className="card-img"
                         />
@@ -28,7 +28,7 @@ const Home = () => {
                     {/* T-Shirts Card */}
                     <div className="card">
                         <img
-                            src="https://example.com/tshirts.jpg"
+                            src="https://i.pinimg.com/236x/44/54/46/445446161ebf1ee6c1e32a163f6f6943.jpg"
                             alt="T-Shirts"
                             className="card-img"
                         />
@@ -39,7 +39,7 @@ const Home = () => {
                     {/* Caps Card */}
                     <div className="card">
                         <img
-                            src="https://example.com/caps.jpg"
+                            src="https://i.pinimg.com/236x/c0/a4/24/c0a42401699dedf10e37bc361b1bb80b.jpg"
                             alt="Caps"
                             className="card-img"
                         />
