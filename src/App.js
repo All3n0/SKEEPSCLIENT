@@ -4,10 +4,12 @@ import BagsPage from './components/BagsPage';
 import InspiratonPage from './components/InspiratonPage';
 import Home from './components/Home';
 import Cart from './components/Cart';
+
 function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/bags" element={<BagsPage />} />
         <Route path="/cart" element={<Cart />} />
