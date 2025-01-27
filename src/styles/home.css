@@ -1,67 +1,95 @@
-/* Home Page Container */
-.home-container {
-    padding: 40px 20px;
-    text-align: center;
-    background: #ffffff; /* Plain white background */
-    min-height: calc(100vh - 120px); /* Adjust for navbar and footer height */
+/* Video Background Container */
+.video-container {
+    position: relative;
+    height: 70vh; /* Adjust as needed */
+    width: 100%;
+    overflow: hidden;
 }
 
-/* Home Page Title */
-.home-title {
-    margin-bottom: 40px;
-    font-size: 3rem;
-    color: #b3261a;
-    font-family: 'Poppins', sans-serif;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.overlay {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
 }
 
 /* Cards Container */
+/* Cards Container */
+
 .cards-container {
+    padding-top: 50px;
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
+    align-items: center;
 }
 
-/* Individual Card */
-.card {
-    background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    width: 280px;
+/* Individual Image Container (Circle with Image) */
+.card-img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 10px;
     text-align: center;
+    transition: transform 0.3s ease;
+    position: relative;
+    margin: 10px;
+    text-align: center;
+    z-index: 2;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 216, 205, 0.15);
+/* Larger image for the middle card */
+.card-img-container:nth-child(2) {
+    width: 300px;
+    height: 300px;
 }
 
-/* Card Image */
+.card-img-container:nth-child(1),
+.card-img-container:nth-child(3) {
+    width: 200px;
+    height: 200px;
+}
+
+/* Image Styling */
 .card-img {
     width: 100%;
-    height: 200px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border-radius: 50%;
     object-fit: cover;
 }
 
-/* Card Title */
-.card-title {
-    font-size: 1.5rem;
-    color: #b3261a;
-    font-family: 'Poppins', sans-serif;
-    margin: 15px 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+/* Button Styling */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
 }
 
-/* Button Styling */
+/* Default Button Styling */
 .btn {
     color: #fff;
     background: #e92716;
     border: none;
-    padding: 12px 25px;
+    padding: 8px 20px;
     border-radius: 25px;
     text-decoration: none;
     font-size: 1rem;
@@ -70,18 +98,137 @@
     transition: background 0.3s ease;
 }
 
+/* Hover effect for button */
 .btn:hover {
     background: #000000;
     color: #fff;
 }
 
+/* Styling for Larger Button (Middle one) */
+.card-img-container:nth-child(2) .btn {
+    font-size: 1.2rem;  /* Larger font size */
+    padding: 12px 30px; /* Larger padding */
+}
+
+/* Styling for Smaller Buttons (Side ones) */
+.card-img-container:nth-child(1) .btn,
+.card-img-container:nth-child(3) .btn {
+    font-size: 0.9rem; /* Smaller font size */
+    padding: 6px 15px;  /* Smaller padding */
+}
+
+/* Hover effect for buttons when image is clicked */
+.card-img-container:hover {
+    transform: scale(1.05);
+}
+
+/* Offer Section */
+.offer-container {
+    background: #e0e0e0;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    min-height: 30vh;
+    
+}
+
+.offer-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.offer-container p {
+    font-size: 1rem;
+    color: #555;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
-    .home-title {
-        font-size: 2rem;
-    }
-
-    .card {
-        width: 100%;
+    .cards-container {
+        flex-direction: column;
     }
 }
+/* Welcome Section (Above Everything Else) */
+.welcome-container {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Background Video */
+.welcome-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Text Styling */
+.welcome-text h1 {
+    font-family: 'HK Modular', 'Rubik Glitch', sans-serif; 
+    font-size: 5rem;
+    color: #df1717;
+    text-decoration:dotted underline;
+    text-decoration-color: #e0e0e0;
+    text-decoration-style: double;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    transform: rotate(-20deg);
+    text-align: center;
+    margin: 0;
+}
+/* Scroll Button Styling */
+.scroll-btn-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.scroll-btn {
+    color: #fff;
+    background: #e92716;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.scroll-btn:hover {
+    background: #000;
+}
+
+/* Main Content */
+#main-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+/* Show Main Content After Scrolling */
+#main-content.visible {
+    display: block;
+    opacity: 1;
+}
+
+/* Offer Section */
+.offer-container {
+    background: #e0e0e0;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    min-height: 30vh;
+}
+

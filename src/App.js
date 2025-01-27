@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import BagsPage from './components/BagsPage';
-import InspiratonPage from './components/InspiratonPage';
+import TshirtsPage from './components/TshirtPage';
+import InspirationPage from './components/InspiratonPage'; // Updated to handle both bags and tshirts
 import Home from './components/Home';
 import Cart from './components/Cart';
 
@@ -12,8 +13,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/bags" element={<BagsPage />} />
+        <Route path="/tshirts" element={<TshirtsPage />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/bags/inspiration/:inspiration" element={<InspiratonPage />} />
+        <Route path="/:type/inspiration/:inspiration" element={<InspirationPage />} /> {/* Updated route */}
       </Routes>
     </Router>
   );

@@ -1,0 +1,38 @@
+.tshirts-page {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.inspiration-card {
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: white;
+}
+
+.inspiration-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.inspiration-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.inspiration-card h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 1rem 0;
+}

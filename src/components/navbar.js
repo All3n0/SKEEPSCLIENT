@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/navbar.css'; // Ensure correct path
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -6,8 +6,32 @@ import { FaShoppingCart } from 'react-icons/fa';
 
 function Navbar() {
     const [showDropdown, setShowDropdown] = useState(false);
+    const [cartCount, setCartCount] = useState(0);
 
     const toggleDropdown = () => setShowDropdown(!showDropdown);
+
+    // Update cart count from localStorage whenever the component mounts or localStorage changes
+    useEffect(() => {
+        const calculateCartCount = () => {
+            const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
+            // Calculate total quantity, defaulting to 1 if 'quantity' is missing
+            const totalItems = savedCart.reduce(
+                (sum, item) => sum + (item.quantity || 1),
+                0
+            );
+            setCartCount(totalItems);
+        };
+
+        calculateCartCount();
+
+        // Listen for localStorage changes (optional, for real-time updates)
+        const handleStorageChange = () => calculateCartCount();
+        window.addEventListener('storage', handleStorageChange);
+
+        return () => {
+            window.removeEventListener('storage', handleStorageChange);
+        };
+    }, []);
 
     return (
         <nav className="navbar">
@@ -28,7 +52,7 @@ function Navbar() {
                             <Link to="/bags" className="dropdown-item">Bags</Link>
                         </li>
                         <li>
-                            <Link to="/t-shirts" className="dropdown-item">T-Shirts</Link>
+                            <Link to="/tshirts" className="dropdown-item">T-Shirts</Link>
                         </li>
                         <li>
                             <Link to="/caps" className="dropdown-item">Caps</Link>
@@ -40,7 +64,6 @@ function Navbar() {
                 </Link>
             </div>
 
-            {/* Center Section: Search Bar */}
             {/* Center Section: Search Bar */}
             <div className="mx-auto search-bar">
                 <div className="input-group">
@@ -61,8 +84,13 @@ function Navbar() {
                 <Link to="/about" className="me-3 text-decoration-none">
                     About
                 </Link>
-                <Link to="/cart" className="cart-icon">
+                <Link to="/cart" className="cart-icon position-relative">
                     <FaShoppingCart size={24} />
+                    {cartCount > 0 && (
+                        <span className="cart-count-badge">
+                        {cartCount}
+                        </span>
+                    )}
                 </Link>
             </div>
         </nav>

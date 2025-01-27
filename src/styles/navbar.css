@@ -112,3 +112,21 @@
 .navbar .d-flex .cart-icon:hover {
     color: #ff4800;
 }
+.cart-count-badge {
+    position: absolute;
+    top: 0;
+    left: 0; /* Adjust badge to the left */
+    transform: translate(-50%, -50%); /* Center the badge relative to the top-left corner */
+    background-color: #df0d0d; /* Red background */
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dotted rgb(145, 15, 15); /* Optional: Add border for a clean look */
+    z-index: 1; /* Ensure it stays above other elements */
+}
+
