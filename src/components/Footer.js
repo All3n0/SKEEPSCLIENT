@@ -65,13 +65,13 @@ function Footer() {
           <nav>
             <ul>
               <li>
-                <Link to="/products">Tote Bags</Link>
+                <Link to="/bags">Tote Bags</Link>
               </li>
               <li>
-                <Link to="/categories">T-shirts</Link>
+                <Link to="/tshirts">T-shirts</Link>
               </li>
               <li>
-                <Link to="/shipping">Caps</Link>
+                <Link to="/caps">Caps</Link>
               </li>
               <li>
                 <Link to="/about">About</Link>
