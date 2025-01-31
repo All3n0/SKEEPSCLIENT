@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/home.css"; // Ensure the path to the CSS file is correct
 import Navbar from "./navbar";
-import Footer from "./Footer";
 import { Link } from "react-router-dom";
 const Home = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -94,9 +93,6 @@ const Home = () => {
                     <h2>Special Offers</h2>
                     <p>This is where your offer content will go...</p>
                 </div>
-
-                {/* Footer */}
-                <Footer />
             </div>
         </div>
     );

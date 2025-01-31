@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Footer from './Footer';
 import Navbar from './navbar';
 import '../styles/cart.css';
 
@@ -83,8 +82,6 @@ const Cart = () => {
                     </div>
                 </div>
             )}
-
-            <Footer />
         </span>
     );
 };

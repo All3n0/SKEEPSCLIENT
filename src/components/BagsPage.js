@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { fetchBags } from './api';
 import '../styles/bagspage.css';
 import Navbar from './navbar';
-import Footer from './Footer';
 
 const BagsPage = () => {
     const [bags, setBags] = useState([]);
@@ -53,7 +52,6 @@ const BagsPage = () => {
                 ))}
             </div>
         </div>
-        <Footer />
         </span>
     );
 };
