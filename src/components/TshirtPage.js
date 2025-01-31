@@ -53,7 +53,6 @@ const TshirtsPage = () => {
                     ))}
                 </div>
             </div>
-            <Footer />
         </span>
     );
 };
