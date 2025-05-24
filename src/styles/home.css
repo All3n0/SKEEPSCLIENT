@@ -1,234 +1,235 @@
-/* Video Background Container */
-.video-container {
-    position: relative;
-    height: 70vh; /* Adjust as needed */
-    width: 100%;
-    overflow: hidden;
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-.background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-
-.overlay {
-    z-index: 1;
+.welcome-container {
+    height: 100vh;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
-    justify-content: center;
-    height: 100%;
-    text-align: center;
-    padding: 20px;
-}
-
-/* Cards Container */
-/* Cards Container */
-
-.cards-container {
-    padding-top: 50px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-/* Individual Image Container (Circle with Image) */
-.card-img-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    padding: 0 5%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
-    margin: 10px;
-    text-align: center;
-    transition: transform 0.3s ease;
-    position: relative;
-    margin: 10px;
-    text-align: center;
-    z-index: 2;
 }
 
-/* Larger image for the middle card */
-.card-img-container:nth-child(2) {
-    width: 300px;
-    height: 300px;
+.welcome-overlay {
+    background: rgba(255, 255, 255, 0.05); /* optional: for contrast on image */
+    padding: 1rem;
+    border-radius: 1rem;
 }
 
-.card-img-container:nth-child(1),
-.card-img-container:nth-child(3) {
-    width: 200px;
-    height: 200px;
+.welcome-text {
+    color: #000;
+    max-width: 600px;
+    text-align: left;
+    /* font-family: 'Unbounded', sans-serif; */
+    /* font-style: normal; */
+    font-weight: 700;
+    /* font-optical-sizing: auto; */
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
 }
 
-/* Image Styling */
-.card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    border-radius: 50%;
-    object-fit: cover;
+.top-line {
+    font-size: 2.5rem;
+    font-weight: 900;
+    font-family: "cinzel", sans-serif;
+    font-style: italic;
 }
 
-/* Button Styling */
-.btn-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    width: 100%;
+.brand-name {
+    font-size: 3.5rem;
+    font-family: "Bangers", system-ui;
+    color: #7a1a1a;
+    line-height: 0.9;
+    font-variant: small-caps;
+    letter-spacing: 0.3rem;
+    font-weight: 900;
+    font-style: italic ,Bold;
 }
 
-/* Default Button Styling */
-.btn {
-    color: #fff;
-    background: #e92716;
-    border: none;
-    padding: 8px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    transition: background 0.3s ease;
+.tagline {
+    font-size: 1.2rem;
+    font-family: "Kaushan Script";
+    margin-top: 1rem;
+    font-weight: 900;
 }
 
-/* Hover effect for button */
-.btn:hover {
-    background: #000000;
-    color: #fff;
-}
-
-/* Styling for Larger Button (Middle one) */
-.card-img-container:nth-child(2) .btn {
-    font-size: 1.2rem;  /* Larger font size */
-    padding: 12px 30px; /* Larger padding */
-}
-
-/* Styling for Smaller Buttons (Side ones) */
-.card-img-container:nth-child(1) .btn,
-.card-img-container:nth-child(3) .btn {
-    font-size: 0.9rem; /* Smaller font size */
-    padding: 6px 15px;  /* Smaller padding */
-}
-
-/* Hover effect for buttons when image is clicked */
-.card-img-container:hover {
-    transform: scale(1.05);
-}
-
-/* Offer Section */
-.offer-container {
-    background: #e0e0e0;
-    padding: 40px 20px;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    min-height: 30vh;
-    
-}
-
-.offer-container h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.offer-container p {
-    font-size: 1rem;
-    color: #555;
-}
-
-/* Responsive Design */
+/* ✅ RESPONSIVE RULES */
 @media (max-width: 768px) {
-    .cards-container {
-        flex-direction: column;
+    .top-line {
+        font-size: 2rem;
+    }
+
+    .brand-name {
+        font-size: 2.5rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .welcome-container {
+        justify-content: center;
+        padding: 0 2rem;
+        text-align: center;
+    }
+
+    .welcome-text {
+        max-width: 90%;
     }
 }
-/* Welcome Section (Above Everything Else) */
-.welcome-container {
-    position: relative;
-    height: 100vh; /* Full viewport height */
-    width: 100%;
+
+@media (max-width: 480px) {
+    .top-line {
+        font-size: 1.6rem;
+    }
+
+    .brand-name {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 0.9rem;
+    }
+}
+
+
+.main-content {
+    margin: 0;
+    padding: 0;
+}
+
+/* Section background with image and right-aligned content */
+.bubble-section {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60vh;
+    /* background-image: url('https://i.postimg.cc/vBZ5tF0v/WELCOME-TO-SKEEPS-3.png'); Your preferred background */
+    background-color: #dd0000;
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+}
+
+/* Container for the bubbles */
+.bubbles-container {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    align-items: flex-end;
+    margin-right: 2rem;
+}
+
+/* Bubble design */
+.bubble {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
     overflow: hidden;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), rgba(255,255,255,0.1));
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.3);
+    position: relative;
+    transition: transform 0.3s ease;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
 }
 
-/* Background Video */
-.welcome-container video {
-    position: absolute;
-    top: 0;
-    left: 0;
+.bubble:hover {
+    transform: scale(1.1);
+}
+
+.bubble img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
+    border-radius: 50%;
+    opacity: 0.9;
 }
 
-/* Text Styling */
-.welcome-text h1 {
-    font-family: 'HK Modular', 'Rubik Glitch', sans-serif; 
-    font-size: 5rem;
-    color: #df1717;
-    text-decoration:dotted underline;
-    text-decoration-color: #e0e0e0;
-    text-decoration-style: double;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    transform: rotate(-20deg);
-    text-align: center;
-    margin: 0;
-}
-/* Scroll Button Styling */
-.scroll-btn-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 100;
-}
-
-.scroll-btn {
-    color: #fff;
-    background: #e92716;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 25px;
+.bubble-btn {
+    position: absolute;
+    bottom: 10px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 0.4rem 1rem;
+    border-radius: 15px;
+    color: #000;
+    font-weight: bold;
     text-decoration: none;
     font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    transition: background 0.3s ease;
 }
 
-.scroll-btn:hover {
-    background: #000;
+/* Responsive design */
+@media (max-width: 768px) {
+    .bubble-section {
+        justify-content: center;
+        padding: 1rem;
+        height: auto;
+    }
+
+    .bubbles-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .bubble {
+    animation: float 6s ease-in-out infinite;
+    transition: transform 0.3s ease;
 }
 
-/* Main Content */
-#main-content {
-    display: none;
-    opacity: 0;
-    transition: opacity 1s ease;
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
 }
 
-/* Show Main Content After Scrolling */
-#main-content.visible {
-    display: block;
-    opacity: 1;
+
+    .bubble-btn {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.8rem;
+    }
 }
 
-/* Offer Section */
-.offer-container {
-    background: #e0e0e0;
-    padding: 40px 20px;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    min-height: 30vh;
+@media (max-width: 480px) {
+    .bubble {
+        width: 130px;
+        height: 130px;
+    }
+
+    .bubble-btn {
+        font-size: 0.75rem;
+    }
 }
 
+@media (max-width: 768px) {
+    .bubble-section {
+        background-image: none;
+        background: linear-gradient(to right, #ffecd2, #fcb69f); /* 🟡 Replace with your preferred gradient */
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem 1rem;
+    }
+
+    .bubbles-container {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        margin-left: 0;
+    }
+
+    .bubble {
+        width: 160px;
+        height: 160px;
+    }
+}

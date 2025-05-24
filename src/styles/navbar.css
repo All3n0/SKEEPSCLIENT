@@ -129,4 +129,21 @@
     border: 2px dotted rgb(145, 15, 15); /* Optional: Add border for a clean look */
     z-index: 1; /* Ensure it stays above other elements */
 }
+.search-bar .dropdown-menu {
+    background-color: white;
+    border: 1px solid #ddd;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 2000;
+}
+
+.search-bar .dropdown-item {
+    color: black;
+    transition: background 0.2s ease-in-out;
+}
+
+.search-bar .dropdown-item:hover {
+    background-color: #f7f7f7;
+    font-size: 500px;;
+}
 

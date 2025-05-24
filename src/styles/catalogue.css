@@ -1,0 +1,155 @@
+/* catalogue.css */
+
+.catalogue-container {
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.catalogue-container h1,
+.catalogue-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #222;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.controls select,
+.controls input {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 200px;
+}
+
+.create-form,
+.edit-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.create-form input,
+.edit-form input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 200px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+}
+
+.create-form button,
+.edit-form button,
+.edit,
+.delete,
+.save,
+.cancel {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.create-form button {
+  background-color: #007bff;
+  color: white;
+}
+
+.create-form button:hover {
+  background-color: #0056b3;
+}
+
+.item-grid,
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.item-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.item-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.item-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.item-card p {
+  font-size: 0.95rem;
+  margin: 0.3rem 0;
+}
+
+.edit {
+  background-color: #ffc107;
+  color: #222;
+}
+
+.edit:hover {
+  background-color: #e0a800;
+}
+
+.delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete:hover {
+  background-color: #c82333;
+}
+
+.save {
+  background-color: #28a745;
+  color: white;
+}
+
+.save:hover {
+  background-color: #218838;
+}
+
+.cancel {
+  background-color: #6c757d;
+  color: white;
+}
+
+.cancel:hover {
+  background-color: #5a6268;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .create-form,
+  .edit-form {
+    flex-direction: column;
+    align-items: center;
+  }
+}
