@@ -4,6 +4,7 @@ import { fetchBags } from './api';
 import '../styles/bagspage.css';
 import Navbar from './navbar';
 import Footer from './Footer';
+import InspirationCard from './InspirationCard';
 
 const BagsPage = () => {
     const [bags, setBags] = useState([]);
@@ -41,17 +42,16 @@ const BagsPage = () => {
         <div className="bags-page">
             <h1>Choose Your Inspiration</h1>
             <div className="cards-container">
-                {Object.values(inspirations).map((bag) => (
-                    <div
-                        key={bag.inspiration}
-                        className="inspiration-card"
-                        onClick={() => navigate(`/bags/inspiration/${bag.inspiration}`)}
-                    >
-                        <img src={bag.image} alt={bag.name} />
-                        <h3>{bag.inspiration}</h3>
-                    </div>
-                ))}
-            </div>
+    {Object.values(inspirations).map((bag) => (
+        <InspirationCard
+    key={bag.inspiration}
+    image={bag.image}
+    inspiration={bag.inspiration}
+    onClick={() => navigate(`/bags/inspiration/${bag.inspiration}`)}
+/>
+
+    ))}
+</div>
         </div>
         <Footer />
         </span>

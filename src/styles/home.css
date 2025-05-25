@@ -128,8 +128,8 @@ html, body {
 
 /* Bubble design */
 .bubble {
-    width: 200px;
-    height: 200px;
+    width: 500px;
+    height: 500px;
     border-radius: 50%;
     overflow: hidden;
     background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), rgba(255,255,255,0.1));
@@ -215,7 +215,7 @@ html, body {
 @media (max-width: 768px) {
     .bubble-section {
         background-image: none;
-        background: linear-gradient(to right, #ffecd2, #fcb69f); /* 🟡 Replace with your preferred gradient */
+        background: #dd0000; /* 🟡 Replace with your preferred gradient */
         flex-direction: column;
         justify-content: center;
         padding: 2rem 1rem;

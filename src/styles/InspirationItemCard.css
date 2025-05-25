@@ -1,0 +1,78 @@
+.inspiration-item-card {
+    display: flex;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inspiration-item-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+    width: 40%;
+    max-width: 180px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between 0.5rem;
+    padding-left: 20px;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.card-details h3 {
+    font-size: 1.4rem;
+    margin: 0;
+    color: #c40404;
+    font-family: "Bebas Neue", sans-serif;
+    /* font-variation-settings: "wght" 400;
+    line-height: 1.2;*/
+}
+
+
+.card-details p {
+    margin: 5px 0;
+    font-size: 1.3rem;
+    color: #0e0d0d;
+    font-family:playfair-display, serif;
+    font-weight: 500;
+    line-height: 1.4;
+    align-items: right;
+    flex-direction: start;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #b3261a;
+}
+
+.add-to-cart-button {
+    align-self: flex-end;
+    background-color: #b3261a;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.add-to-cart-button:hover {
+    background-color: #3d0707;
+}

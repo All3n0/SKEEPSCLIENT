@@ -1,0 +1,73 @@
+/* src/styles/AboutPage.css */
+
+.about-page {
+    background-color: #f4f4f4;
+    color: #111;
+    font-family: 'Playfair Display', serif;
+    min-height: 100vh;
+}
+
+.about-section {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section {
+    background-color: #b3261a;
+    color: white;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.right-align,
+.left-align {
+    background-color: white;
+}
+
+.right-align .about-text,
+.left-align .about-text {
+    max-width: 900px;
+    padding: 20px;
+    border-left: 6px solid #b3261a;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.right-align {
+    flex-direction: row;
+    text-align: right;
+    justify-content: flex-end;
+}
+
+.left-align {
+    flex-direction: row-reverse;
+    text-align: left;
+    justify-content: flex-start;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #b3261a;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+}

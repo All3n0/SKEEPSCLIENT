@@ -30,17 +30,21 @@ const Cart = () => {
                 {cart.length > 0 ? (
                     <>
                         <div className="cart-grid">
-                            {cart.map((item) => (
-                                <div key={item.id} className="cart-item">
-                                    <img src={item.image} alt={item.name} />
-                                    <h3>{item.name}</h3>
-                                    <p>Price: Ksh{item.price}</p>
-                                    <button onClick={() => removeFromCart(item.id)} className="remove-button">
-                                        Remove
-                                    </button>
-                                </div>
-                            ))}
-                        </div>
+    {cart.map((item) => (
+        <div key={item.id} className="cart-item">
+            <img src={item.image} alt={item.name} />
+            <div className="cart-text">
+                <h3>{item.name}</h3>
+                {item.inspiration && <p className="cart-inspiration">Inspired by: {item.inspiration}</p>}
+                <p className="cart-price">Price: Ksh{item.price.toFixed(2)}</p>
+                <button onClick={() => removeFromCart(item.id)} className="remove-button">
+                    Remove
+                </button>
+            </div>
+        </div>
+    ))}
+</div>
+
                         <button
                             className="checkout-button"
                             onClick={() => setShowPopup(true)}

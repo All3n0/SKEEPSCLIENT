@@ -2,18 +2,27 @@
 .inspiration-page {
     text-align: center;
     padding: 20px;
-    background-color: #f4f4f4; /* Light background color for the page */
-    min-height: 100vh; /* Ensures the page takes the full height */
+    background-color: #f4f4f4;
+    min-height: 100vh;
 }
 
-/* Styling for the heading */
+/* Heading styling */
 .inspiration-page h1 {
     font-size: 2rem;
     color: #333;
     margin-bottom: 30px;
 }
 
-/* Grid layout for bags or t-shirts */
+/* Responsive flex layout */
+.inspiration-items-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Keep existing grid classes just in case */
 .bags-grid,
 .tshirts-grid {
     display: grid;
@@ -22,7 +31,7 @@
     justify-items: center;
 }
 
-/* Card styling for bags and t-shirts */
+/* Card styling */
 .bag-card,
 .tshirt-card {
     background-color: white;
@@ -30,7 +39,7 @@
     border-radius: 8px;
     padding: 15px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(167, 117, 117, 0.829);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -40,7 +49,6 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Image styling inside cards */
 .bag-card img,
 .tshirt-card img {
     width: 100%;
@@ -49,7 +57,6 @@
     border-radius: 8px;
 }
 
-/* Card title styling */
 .bag-card h3,
 .tshirt-card h3 {
     font-size: 1.2rem;
@@ -57,7 +64,6 @@
     margin-top: 10px;
 }
 
-/* Price and button styling */
 .bag-card p,
 .tshirt-card p {
     font-size: 1rem;
@@ -66,7 +72,7 @@
 }
 
 .add-to-cart-button {
-    background-color: #b3261a; /* Orange color for button */
+    background-color: #b3261a;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -78,5 +84,13 @@
 }
 
 .add-to-cart-button:hover {
-    background-color: #3d0707; /* Darker shade of orange on hover */
+    background-color: #3d0707;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .inspiration-items-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }

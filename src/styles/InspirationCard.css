@@ -1,0 +1,32 @@
+.inspiration-card-rect {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(255, 6, 6, 0.1);
+    padding: 10px 16px;
+    margin: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.inspiration-card-rect:hover {
+    transform: translateY(-2px);
+}
+
+.inspiration-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 20px;
+}
+
+.inspiration-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    font-family: playfair-display, serif;
+    margin-bottom: 8px;
+}
+

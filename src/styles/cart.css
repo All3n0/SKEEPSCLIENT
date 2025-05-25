@@ -29,47 +29,60 @@
 /* Grid layout for the cart items */
 .cart-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 20px;
-    justify-items: center;
+    padding: 0 20px;
 }
+
 
 /* Styling for individual cart items */
 .cart-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     background-color: white;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    padding: 16px;
+    gap: 16px;
+    width: 100%;               /* fill grid cell */
+    box-sizing: border-box;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Hover effect for the cart item */
-.cart-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
 
-/* Image styling within the cart item */
 .cart-item img {
-    width: 100%;
-    max-width: 150px;
-    height: auto;
-    border-radius: 8px;
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-/* Title and price styling inside the cart item */
-.cart-item h3 {
-    font-size: 1.5rem;
+
+.cart-text {
+    text-align: left;
+    flex: 1;
+    min-width: 0;              /* prevent overflow */
+    overflow-wrap: break-word;
+}
+
+
+.cart-text h3 {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
     color: #333;
-    margin-top: 15px;
 }
 
-.cart-item p {
-    font-size: 1.1rem;
-    color: #555;
-    margin-top: 10px;
+.cart-inspiration {
+    font-size: 0.95rem;
+    color: #777;
+    margin-bottom: 6px;
+}
+
+.cart-price {
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 10px;
 }
 
 /* Styling for the "Remove" button */

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from './navbar';
 import Footer from './Footer';
 import '../styles/tshirtspage.css';
+import InspirationCard from './InspirationCard';
 
 const TshirtsPage = () => {
     const [tshirts, setTshirts] = useState([]);
@@ -41,17 +42,15 @@ const TshirtsPage = () => {
             <div className="tshirts-page">
                 <h1>Choose Your Inspiration</h1>
                 <div className="cards-container">
-                    {Object.values(inspirations).map((tshirt) => (
-                        <div
-                            key={tshirt.inspiration}
-                            className="inspiration-card"
-                            onClick={() => navigate(`/tshirts/inspiration/${tshirt.inspiration}`)}
-                        >
-                            <img src={tshirt.image} alt={tshirt.name} />
-                            <h3>{tshirt.inspiration}</h3>
-                        </div>
-                    ))}
-                </div>
+    {Object.values(inspirations).map((tshirt) => (
+        <InspirationCard
+            key={tshirt.inspiration}
+            image={tshirt.image}
+            inspiration={tshirt.inspiration}
+            onClick={() => navigate(`/tshirts/inspiration/${tshirt.inspiration}`)}
+        />
+    ))}
+</div>
             </div>
             <Footer />
         </span>
