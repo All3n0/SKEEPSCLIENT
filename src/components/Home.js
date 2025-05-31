@@ -46,11 +46,11 @@ const Home = () => {
     <div className="bubble-section">
         <div className="bubbles-container">
             <div className="bubble">
-                <img src="https://i.pinimg.com/236x/44/54/46/445446161ebf1ee6c1e32a163f6f6943.jpg" alt="T-Shirts" />
+                <img src="https://i.pinimg.com/736x/38/b8/0c/38b80cc18dc396a318719215e29d44c8.jpg" alt="T-Shirts" />
                 <Link to="/tshirts" className="bubble-btn">T-Shirts</Link>
             </div>
             <div className="bubble">
-                <img src="https://i.pinimg.com/236x/7c/ce/9c/7cce9c6c42e19b455860ec240676511d.jpg" alt="Bags" />
+                <img src="https://i.pinimg.com/736x/75/c6/0f/75c60f13dbbccec5bfe78a0d84364e7b.jpg" alt="Bags" />
                 <Link to="/bags" className="bubble-btn">Bags</Link>
             </div>
         </div>

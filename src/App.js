@@ -8,6 +8,7 @@ import Cart from './components/Cart';
 import CatalogEditor from './components/catalogue';
 import ErrorPage from './components/Errorpage';
 import AboutPage from './components/About';
+import AdminPanel from './components/AdminPanel';
 function App() {
   return (
     <Router>
@@ -19,6 +20,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/catalogue" element={<CatalogEditor />} />
         <Route path="*" element={<ErrorPage />} />
+        <Route path="/admin" element={<AdminPanel />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/:type/inspiration/:inspiration" element={<InspirationPage />} /> {/* Updated route */}
       </Routes>

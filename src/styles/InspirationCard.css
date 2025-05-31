@@ -5,6 +5,7 @@
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(255, 6, 6, 0.1);
     padding: 10px 16px;
+    border: 1px solid #e40d0d;
     margin: 12px;
     cursor: pointer;
     transition: transform 0.2s ease;
