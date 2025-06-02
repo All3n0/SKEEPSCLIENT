@@ -10,7 +10,9 @@ const Cart = () => {
   const [nameInput, setNameInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
   const [instaInput, setInstaInput] = useState("");
-    console.log(cart);
+  const [submitting, setSubmitting] = useState(false);
+  const [orderMessage, setOrderMessage] = useState("");
+
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCart(storedCart);
@@ -32,18 +34,22 @@ const Cart = () => {
 
   const handleCompleteOrder = () => {
     if (!nameInput || !emailInput || !instaInput) {
-      alert("Please fill in all fields.");
+      setOrderMessage("Please fill in all fields.");
+      setShowPopup(true);
       return;
     }
+
+    setSubmitting(true);
 
     const orderDetails = {
       customer_name: nameInput,
       customer_email: emailInput,
-      insragram_handle: instaInput,
+      instagram_handle: instaInput,
       items: cart.map((item) => ({
         product_type: "bag",
         product_name: item.name,
         product_id: item.id,
+        price: Number(item.price) || 0,
         size: item.size || null,
         quantity: 1,
       })),
@@ -56,7 +62,7 @@ const Cart = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        alert("Order placed successfully!");
+        setOrderMessage("Order placed successfully!");
         localStorage.removeItem("cart");
         setCart([]);
         setShowPopup(true);
@@ -67,8 +73,19 @@ const Cart = () => {
       })
       .catch((err) => {
         console.error("Error placing order:", err);
-        alert("Something went wrong. Please try again.");
-      });
+        setOrderMessage("Something went wrong. Please try again.");
+        setShowPopup(true);
+      })
+      .finally(() => setSubmitting(false));
+  };
+
+  // Style for the skeepscollection header
+  const popupHeaderStyle = {
+    fontFamily: "'Rubik Glitch', cursive",
+    fontSize: "1.5rem",
+    textAlign: "center",
+    marginBottom: "1rem",
+    color: "#333",
   };
 
   return (
@@ -104,30 +121,48 @@ const Cart = () => {
 
         {showNamePrompt && (
           <div className="popup">
-            <div className="popup-content">
+            <div className="popup-content form-popup">
+              <div style={popupHeaderStyle}>skeepscollection</div>
               <h3>Enter Your Details</h3>
-              <input
-                type="text"
-                placeholder="Your Name"
-                value={nameInput}
-                onChange={(e) => setNameInput(e.target.value)}
-              />
-              <input
-                type="email"
-                placeholder="Your Email"
-                value={emailInput}
-                onChange={(e) => setEmailInput(e.target.value)}
-              />
-              <input
-                type="text"
-                placeholder="Instagram Handle"
-                value={instaInput}
-                onChange={(e) => setInstaInput(e.target.value)}
-              />
-              <button className="complete-button" onClick={handleCompleteOrder}>
-                Confirm Order
+              <div className="form-group">
+                <label>Your Name</label>
+                <input
+                  type="text"
+                  placeholder="e.g. Jane Doe"
+                  value={nameInput}
+                  onChange={(e) => setNameInput(e.target.value)}
+                />
+              </div>
+              <div className="form-group">
+                <label>Email</label>
+                <input
+                  type="email"
+                  placeholder="e.g. jane@example.com"
+                  value={emailInput}
+                  onChange={(e) => setEmailInput(e.target.value)}
+                />
+              </div>
+              <div className="form-group">
+                <label>Instagram Handle</label>
+                <input
+                  type="text"
+                  placeholder="e.g. @yourhandle"
+                  value={instaInput}
+                  onChange={(e) => setInstaInput(e.target.value)}
+                />
+              </div>
+              <button
+                className="complete-button"
+                onClick={handleCompleteOrder}
+                disabled={submitting}
+              >
+                {submitting ? "Placing Order..." : "Confirm Order"}
               </button>
-              <button className="close-button" onClick={() => setShowNamePrompt(false)}>
+              <button
+                className="close-button"
+                onClick={() => setShowNamePrompt(false)}
+                disabled={submitting}
+              >
                 Cancel
               </button>
             </div>
@@ -136,8 +171,15 @@ const Cart = () => {
 
         {showPopup && (
           <div className="popup">
-            <div className="popup-content">
-              <p>Order confirmed! Thank you.</p>
+            <div className="popup-content message-popup">
+              {/* <div style={popupHeaderStyle}>skeepscollection</div> */}
+              <p>{orderMessage}</p>
+              {/* Add extra message only if order was placed successfully */}
+              {orderMessage === "Order placed successfully!" && (
+                <p style={{ fontSize: "0.9rem", marginTop: "0.5rem", color: "#555" }}>
+                  Please check your spam folder as the confirmation email might be there.
+                </p>
+              )}
               <button className="close-button" onClick={() => setShowPopup(false)}>
                 Close
               </button>

@@ -3,7 +3,7 @@ import "../styles/admin.css";
 
 const AdminPanel = () => {
   const [orders, setOrders] = useState([]);
-    console.log(orders);
+
   useEffect(() => {
     fetch("http://localhost:5555/orders")
       .then((res) => res.json())
@@ -50,40 +50,59 @@ const AdminPanel = () => {
       {orders.length === 0 ? (
         <p className="no-orders">No orders yet.</p>
       ) : (
-        <div className="orders-container">
-          {orders.map((order) => (
-            
-            <div className="order-card" key={order.order_id}>
-                
-              <h3>Order #{order.order_id}</h3>
-              <p><strong>Name:</strong> {order.customer_name}</p>
-              <p><strong>Email:</strong> {order.customer_email}</p>
-              <p><strong>Instagram:</strong> {order.instagram_handle || "N/A"}</p>
-              <p><strong>Status:</strong> {order.completed ? "✅ Completed" : "❌ Pending"}</p>
-              <p><strong>Items:</strong></p>
-              <ul className="order-items">
-                {order.items.map((item, index,) => (
-                  <li key={index}>
-                    Product: {item.product_name || "N/A"} — Quantity: {item.quantity}
-                  </li>
-                ))}
-              </ul>
-              <div className="order-actions">
-                <button
-                  className="complete-btn"
-                  onClick={() => toggleComplete(order.order_id, order.completed)}
-                >
-                  {order.completed ? "Unmark as Complete" : "Mark as Complete"}
-                </button>
-                <button
-                  className="delete-btn"
-                  onClick={() => handleDelete(order.order_id)}
-                >
-                  Delete Order
-                </button>
-              </div>
-            </div>
-          ))}
+        <div className="orders-table">
+          <div className="table-header">
+            <div>Order #</div>
+            <div>Name</div>
+            <div>Email</div>
+            <div>Instagram</div>
+            <div>Status</div>
+            <div>Items</div>
+            <div>Total (Ksh)</div>
+            <div>Actions</div>
+          </div>
+
+          {orders.map((order) => {
+            const total = order.items.reduce(
+              (sum, item) => sum + item.price * item.quantity,
+              0
+            );
+
+            return (
+              <div className="table-row" key={order.order_id}>
+  <div data-label="Order #">{order.order_id}</div>
+  <div data-label="Name">{order.customer_name}</div>
+  <div data-label="Email">{order.customer_email}</div>
+  <div data-label="Instagram">{order.instagram_handle || "N/A"}</div>
+  <div data-label="Status">{order.completed ? "✅ Completed" : "❌ Pending"}</div>
+  <div data-label="Items">
+    <ul>
+      {order.items.map((item, index) => (
+        <li key={index}>
+          {item.product_name} — {item.quantity} × Ksh {item.price}
+        </li>
+      ))}
+    </ul>
+  </div>
+  <div data-label="Total"><strong>Ksh {total}</strong></div>
+  <div className="order-actions" data-label="Actions">
+    <button
+      className="complete-btn"
+      onClick={() => toggleComplete(order.order_id, order.completed)}
+    >
+      {order.completed ? "Unmark" : "Complete"}
+    </button>
+    <button
+      className="delete-btn"
+      onClick={() => handleDelete(order.order_id)}
+    >
+      Delete
+    </button>
+  </div>
+</div>
+
+            );
+          })}
         </div>
       )}
     </div>

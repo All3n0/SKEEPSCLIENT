@@ -40,6 +40,12 @@ const AboutPage = () => {
                     </p>
                 </div>
             </div>
+            <div className='about-section left-align'>
+                <div className="about-text">
+                    <h2> Customization</h2>
+                    <p>We are passionate about bringing your unique ideas, aesthetics, and visions to life through our bespoke customization services. Whether you're looking for a single special piece or a large-scale order, we tailor every creation to reflect your personal style and preferences with exceptional craftsmanship. No matter the size of your project, we’re here to transform your concepts into beautifully crafted products that perfectly capture your individuality.</p>
+                </div>
+            </div>
 
             <Footer />
         </div>

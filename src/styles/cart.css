@@ -34,7 +34,6 @@
     padding: 0 20px;
 }
 
-
 /* Styling for individual cart items */
 .cart-item {
     display: flex;
@@ -50,14 +49,13 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-
 .cart-item img {
     width: 130px;
     height: 130px;
     object-fit: cover;
     border-radius: 10px;
+    flex-shrink: 0;
 }
-
 
 .cart-text {
     text-align: left;
@@ -65,7 +63,6 @@
     min-width: 0;              /* prevent overflow */
     overflow-wrap: break-word;
 }
-
 
 .cart-text h3 {
     font-size: 1.4rem;
@@ -109,6 +106,7 @@
     color: #777;
     margin-top: 50px;
 }
+
 /* Checkout button */
 .checkout-button {
     margin-top: 20px;
@@ -150,6 +148,16 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     position: relative;
+}
+
+/* Add the popup title "skeepscollection" with Rubik Glitch font */
+.popup-content::before {
+    content: "skeepscollection";
+    display: block;
+    font-family: 'Rubik Glitch', cursive;
+    font-size: 1.8rem;
+    color: #b3261a;
+    margin-bottom: 10px;
 }
 
 /* Popup items */
@@ -199,4 +207,170 @@
 
 .close-button:hover {
     background-color: #c82333;
+}
+
+/* Redesigned popup form content */
+.form-popup {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+/* Feedback message popup (shared style) */
+.message-popup p {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* Add spam check message in last popup below order message */
+.message-popup p.spam-warning {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Disabled state for buttons */
+.complete-button:disabled,
+.close-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* RESPONSIVE STYLES */
+
+/* Small devices (phones, less than 480px) */
+@media (max-width: 479px) {
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px;
+    }
+
+    .cart-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .cart-text {
+        margin-top: 12px;
+        text-align: left;
+    }
+
+    .cart-text h3 {
+        font-size: 1.2rem;
+    }
+
+    .remove-button {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    .cart-grid {
+        padding: 0 10px;
+        gap: 15px;
+    }
+
+    .checkout-button {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 12px;
+    }
+
+    .popup-content {
+        width: 95%;
+        max-width: none;
+        padding: 15px;
+    }
+
+    .complete-button,
+    .close-button {
+        width: 100%;
+        margin: 8px 0;
+    }
+}
+
+/* Medium devices (tablets, 480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+    .cart-item {
+        flex-direction: row;
+        padding: 14px;
+    }
+
+    .cart-item img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .cart-text h3 {
+        font-size: 1.3rem;
+    }
+
+    .remove-button {
+        padding: 8px 12px;
+        font-size: 0.95rem;
+        margin-top: 12px;
+    }
+
+    .cart-grid {
+        padding: 0 15px;
+        gap: 18px;
+    }
+
+    .checkout-button {
+        font-size: 1rem;
+        padding: 10px 18px;
+        width: auto;
+    }
+
+    .popup-content {
+        max-width: 480px;
+        padding: 20px;
+    }
+}
+
+/* Larger tablets and small desktops (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .cart-item img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .cart-text h3 {
+        font-size: 1.4rem;
+    }
+
+    .cart-grid {
+        padding: 0 20px;
+        gap: 20px;
+    }
+
+    .popup-content {
+        max-width: 500px;
+    }
 }

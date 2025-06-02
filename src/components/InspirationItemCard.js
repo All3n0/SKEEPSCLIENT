@@ -3,7 +3,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 import '../styles/InspirationItemCard.css';
 
 const InspirationItemCard = ({ item, addToCart }) => {
-    console.log(item);
+    
     return (
         <div className="inspiration-item-card">
             <img src={item.image} alt={item.name} className="card-image" />
