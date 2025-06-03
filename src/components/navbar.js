@@ -66,6 +66,7 @@ function Navbar() {
                     </ul>
                 )}
                 <Link to="/home" className="ms-2 text-decoration-none skeeps-link">SKEEPS</Link>
+                <Link to="/home" id="home-link">Home</Link>
             </div>
 
             <div className="mx-auto search-bar position-relative">

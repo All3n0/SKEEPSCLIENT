@@ -11,7 +11,14 @@
     padding: 20px;
 }
 
-
+h1 {
+    font-size: 3rem;
+    font-family: playfair-display, serif;
+    text-decoration:  double underline  #b3261a;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 30px;
+}
 
 .inspiration-card {
     cursor: pointer;

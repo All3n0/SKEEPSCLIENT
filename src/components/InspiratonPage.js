@@ -9,7 +9,7 @@ import '../styles/inspiratipnpage.css';
 const InspirationPage = () => {
     const { inspiration, type } = useParams();
     const [items, setItems] = useState([]);
-    const [showPopup, setShowPopup] = useState(false);
+    const [notifications, setNotifications] = useState([]);
 
     useEffect(() => {
         fetchItemsByInspiration(type, inspiration).then((data) => setItems(data));
@@ -19,22 +19,27 @@ const InspirationPage = () => {
         const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
         localStorage.setItem('cart', JSON.stringify([...currentCart, item]));
 
-        // Show the popup
-        setShowPopup(true);
+        const id = Date.now(); // unique ID
+        const newNotification = { id, message: '✔ Added to cart' };
+        setNotifications((prev) => [...prev, newNotification]);
+
         setTimeout(() => {
-            setShowPopup(false);
-        }, 2000); // Popup disappears after 2 seconds
+            setNotifications((prev) => prev.filter((n) => n.id !== id));
+        }, 2000); // Remove after 2 seconds
     };
 
     return (
         <span>
             <Navbar />
 
-            {showPopup && (
-                <div className="cart-popup">
-                    <span className="checkmark">✔</span> Added to cart
-                </div>
-            )}
+            {/* Notification stack */}
+            <div className="popup-container">
+                {notifications.map((notification) => (
+                    <div key={notification.id} className="cart-popup">
+                        {notification.message}
+                    </div>
+                ))}
+            </div>
 
             <div className="inspiration-page">
                 <h1>{inspiration} {type === 'bags' ? 'Bags' : 'T-Shirts'}</h1>

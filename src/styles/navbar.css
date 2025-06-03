@@ -7,7 +7,15 @@
     border-bottom: 2px solid #b3261a;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+#home-link {
+    color: #b3261a;
+    text-decoration: none;
+    /* font-family: playfair-display, serif; */
+    padding-left: 1rem;
+    font-weight: bold;
+    font-size: large;
 
+}
 /* Dropdown Menu Styles */
 .navbar .dropdown-menu {
     left: 0;
