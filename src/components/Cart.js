@@ -122,7 +122,7 @@ const Cart = () => {
         {showNamePrompt && (
           <div className="popup">
             <div className="popup-content form-popup">
-              <div style={popupHeaderStyle}>skeepscollection</div>
+              {/* <div style={popupHeaderStyle}>skeepscollection</div> */}
               <h3>Enter Your Details</h3>
               <div className="form-group">
                 <label>Your Name</label>
