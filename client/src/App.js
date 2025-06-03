@@ -18,9 +18,9 @@ function App() {
         <Route path="/bags" element={<BagsPage />} />
         <Route path="/tshirts" element={<TshirtsPage />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/catalogue" element={<CatalogEditor />} />
+        <Route path="/catalogue123AllanKiprop" element={<CatalogEditor />} />
         <Route path="*" element={<ErrorPage />} />
-        <Route path="/admin" element={<AdminPanel />} />
+        <Route path="/admin123AllanKiprop" element={<AdminPanel />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/:type/inspiration/:inspiration" element={<InspirationPage />} /> {/* Updated route */}
       </Routes>
