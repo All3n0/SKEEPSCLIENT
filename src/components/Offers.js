@@ -6,10 +6,12 @@ const Offers = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const products = [
-        { id: 0, image: "https://i.postimg.cc/PJp2rbJL/entergalactic.png" },
-        { id: 1, image: "https://i.postimg.cc/15Pp5FQF/ROCKY.png" },
-        { id: 2, image: "https://i.postimg.cc/sX7h3jHK/CHROMAKOPIA-design-1.png" },
-        { id: 3, image: "https://i.postimg.cc/15JNmYMx/burna-design.png" }
+        { id: 0, image: "https://i.postimg.cc/MZ7dHHn1/COMING-SOON.png" },
+        { id: 1, image: "https://i.postimg.cc/4NG2QtD8/COMING-SOON-1.png" },
+        { id: 2, image: "https://i.postimg.cc/NG2vz1PB/COMING-SOON-2.png" },
+        { id: 3, image: "https://i.postimg.cc/SNjkqBsF/COMING-SOON-4.png" },
+        { id: 4, image: "https://i.postimg.cc/4xq3rJbS/COMING-SOON-5.png" },
+        { id: 5, image: "https://i.postimg.cc/mZPTGxhx/COMING-SOON-3.png" },
     ];
 
     useEffect(() => {
@@ -17,7 +19,7 @@ const Offers = () => {
             const nextIndex = (currentIndex + 1) % products.length;
             setCurrentIndex(nextIndex);
             scrollToIndex(nextIndex);
-        }, 2000);
+        }, 4000);
 
         return () => clearInterval(interval);
     }, [currentIndex]);
