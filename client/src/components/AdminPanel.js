@@ -5,7 +5,7 @@ const AdminPanel = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5555/orders")
+    fetch("https://skeepsserver.onrender.com/orders")
       .then((res) => res.json())
       .then((data) => setOrders(data))
       .catch((err) => console.error("Failed to fetch orders:", err));
@@ -13,7 +13,7 @@ const AdminPanel = () => {
 
   const toggleComplete = (orderId, currentStatus) => {
     const endpoint = currentStatus ? "uncomplete" : "complete";
-    fetch(`http://localhost:5555/orders/${orderId}/${endpoint}`, {
+    fetch(`https://skeepsserver.onrender.com/orders/${orderId}/${endpoint}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -32,7 +32,7 @@ const AdminPanel = () => {
   const handleDelete = (orderId) => {
     if (!window.confirm("Are you sure you want to delete this order?")) return;
 
-    fetch(`http://localhost:5555/orders/${orderId}`, {
+    fetch(`https://skeepsserver.onrender.com/orders/${orderId}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -70,37 +70,44 @@ const AdminPanel = () => {
 
             return (
               <div className="table-row" key={order.order_id}>
-  <div data-label="Order #">{order.order_id}</div>
-  <div data-label="Name">{order.customer_name}</div>
-  <div data-label="Email">{order.customer_email}</div>
-  <div data-label="Instagram">{order.instagram_handle || "N/A"}</div>
-  <div data-label="Status">{order.completed ? "✅ Completed" : "❌ Pending"}</div>
-  <div data-label="Items">
-    <ul>
-      {order.items.map((item, index) => (
-        <li key={index}>
-          {item.product_name} — {item.quantity} × Ksh {item.price}
-        </li>
-      ))}
-    </ul>
-  </div>
-  <div data-label="Total"><strong>Ksh {total}</strong></div>
-  <div className="order-actions" data-label="Actions">
-    <button
-      className="complete-btn"
-      onClick={() => toggleComplete(order.order_id, order.completed)}
-    >
-      {order.completed ? "Unmark" : "Complete"}
-    </button>
-    <button
-      className="delete-btn"
-      onClick={() => handleDelete(order.order_id)}
-    >
-      Delete
-    </button>
-  </div>
-</div>
-
+                <div data-label="Order #">{order.order_id}</div>
+                <div data-label="Name">{order.customer_name}</div>
+                <div data-label="Email">{order.customer_email}</div>
+                <div data-label="Instagram">
+                  {order.instagram_handle || "N/A"}
+                </div>
+                <div data-label="Status">
+                  {order.completed ? "✅ Completed" : "❌ Pending"}
+                </div>
+                <div data-label="Items">
+                  <ul>
+                    {order.items.map((item, index) => (
+                      <li key={index}>
+                        {item.product_name} — {item.quantity} × Ksh {item.price}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div data-label="Total">
+                  <strong>Ksh {total}</strong>
+                </div>
+                <div className="order-actions" data-label="Actions">
+                  <button
+                    className="complete-btn"
+                    onClick={() =>
+                      toggleComplete(order.order_id, order.completed)
+                    }
+                  >
+                    {order.completed ? "Unmark" : "Complete"}
+                  </button>
+                  <button
+                    className="delete-btn"
+                    onClick={() => handleDelete(order.order_id)}
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
             );
           })}
         </div>

@@ -3,7 +3,7 @@ import axios from "axios";
 import "../styles/catalogue.css";
 import AdminLogin from "./AdminLogin";
 
-const API_BASE = "http://127.0.0.1:5555";
+const API_BASE = "https://skeepsserver.onrender.com";
 
 const CatalogueManager = () => {
   const [type, setType] = useState("bags");

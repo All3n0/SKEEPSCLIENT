@@ -55,7 +55,7 @@ const Cart = () => {
       })),
     };
 
-    fetch("http://localhost:5555/orders", {
+    fetch("https://skeepsserver.onrender.com/orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(orderDetails),
@@ -102,9 +102,14 @@ const Cart = () => {
                 <img src={item.image} alt={item.name} />
                 <div className="cart-text">
                   <h3>{item.name}</h3>
-                  {item.size && <p className="cart-inspiration">Size: {item.size}</p>}
+                  {item.size && (
+                    <p className="cart-inspiration">Size: {item.size}</p>
+                  )}
                   <p className="cart-price">Ksh {item.price}</p>
-                  <button className="remove-button" onClick={() => removeFromCart(item.id)}>
+                  <button
+                    className="remove-button"
+                    onClick={() => removeFromCart(item.id)}
+                  >
                     Remove
                   </button>
                 </div>
@@ -176,11 +181,21 @@ const Cart = () => {
               <p>{orderMessage}</p>
               {/* Add extra message only if order was placed successfully */}
               {orderMessage === "Order placed successfully!" && (
-                <p style={{ fontSize: "0.9rem", marginTop: "0.5rem", color: "#555" }}>
-                  Please check your spam folder as the confirmation email might be there.
+                <p
+                  style={{
+                    fontSize: "0.9rem",
+                    marginTop: "0.5rem",
+                    color: "#555",
+                  }}
+                >
+                  Please check your spam folder as the confirmation email might
+                  be there.
                 </p>
               )}
-              <button className="close-button" onClick={() => setShowPopup(false)}>
+              <button
+                className="close-button"
+                onClick={() => setShowPopup(false)}
+              >
                 Close
               </button>
             </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const API_BASE = "http://127.0.0.1:5555";
+const API_BASE = "https://skeepsserver.onrender.com";
 
 const AdminLogin = ({ onLogin }) => {
   const [credentials, setCredentials] = useState({ username: "", password: "" });

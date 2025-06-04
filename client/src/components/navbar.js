@@ -39,7 +39,7 @@ function Navbar() {
         }
 
         try {
-            const res = await fetch(`http://127.0.0.1:5555/search?q=${value}`);
+            const res = await fetch(`https://skeepsserver.onrender.com/search?q=${value}`);
             const data = await res.json();
             const merged = [
                 ...data.bags.map(item => ({ ...item, type: 'bag' })),
