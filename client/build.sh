@@ -1,9 +1,11 @@
-#!/usr/bin/env bash
-# exit on error
+
 set -o errexit
 
-# Install dependencies
 npm ci
+npm install 
+npm install -g serve
 
-# Build the project
+
 npm run build
+
+echo "Build completed successfully"
